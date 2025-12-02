@@ -1,17 +1,15 @@
-import os 
-from dotenv import load_dotenv 
+from app.schemas.env_schema import settings 
 
-load_dotenv()
 
-def get_connetion_string():
-        USER = os.getenv("POSTGRES_USER")
-        PASSWORD = os.getenv("POSTGRES_PASSWORD") 
-        DB = os.getenv("POSTGRES_DB") 
-        HOST = os.getenv("POSTGRES_HOST", "postgres") 
-        PORT = os.getenv("POSTGRES_PORT", "5432") 
+def get_connection_string():
+        USER = settings.POSTGRES_USER
+        PASSWORD = settings.POSTGRES_PASSWORD
+        DB = settings.POSTGRES_DB
+        HOST = settings.POSTGRES_HOST
+        PORT = settings.POSTGRES_PORT
 
         return f"postgresql://{USER}:{PASSWORD}@{HOST}:{PORT}/{DB}"
 
-CONN_STRING = get_connetion_string()
+CONN_STRING = get_connection_string()
  
 
