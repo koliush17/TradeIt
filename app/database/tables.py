@@ -14,16 +14,17 @@ def create_crypto_news_table():
 def create_crypto_prices_table():
     return """CREATE TABLE IF NOT EXISTS crypto_prices(
                         id SERIAL PRIMARY KEY,
-                        price_date DATE NOT NULL,
+                        price_date TIMESTAMP NOT NULL,
                         currency TEXT NOT NULL,
                         time_period TEXT NOT NULL,
+                        interval TEXT,
                         open_price REAL NOT NULL,
                         highest_price REAL NOT NULL,
                         lowest_price REAL NOT NULL,
                         close_price REAL NOT NULL,
                         volume REAL NOT NULL,
 
-                        CONSTRAINT unique_price_item UNIQUE (price_date, currency, time_period)
+                        CONSTRAINT unique_price_item UNIQUE (price_date, currency, time_period, interval)
                        )"""
 
 def create_fear_greed_table():
@@ -36,4 +37,5 @@ def create_fear_greed_table():
                         CONSTRAINT unique_greed_fear_item UNIQUE(time_stamp)
                         )"""
                         
+
 
