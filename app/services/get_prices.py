@@ -41,6 +41,7 @@ class GetPricesCrypto:
                         date_price = date,
                         currency = currency,
                         time_period = time_period.upper(),
+                        interval = None,
                         open_price = prices["1. open"],
                         high = prices["2. high"],
                         low = prices["3. low"],
