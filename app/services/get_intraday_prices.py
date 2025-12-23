@@ -63,17 +63,3 @@ class IntraDayPricesService:
                          for interval: {interval}, during period: {time_stamp}""")
 
         return price_info
-
-
-           
-       
-
-
-#| Interval | Max Period Allowed |
-#| -------- | ------------------ |
-#| 1m       | 7 days             |
-#| 2m, 5m   | 60 days            |
-#| 15m, 30m | 60 days            |
-#| 1h       | Multi-year         |
-#| 1d+      | Unlimited          |
-
