@@ -9,7 +9,7 @@ def initialize_llm():
     llm = "gemini-2.5-flash"
     
     model = ChatGoogleGenerativeAI(
-        model=llm
+        model=llm,
         api_key=settings.GEMINI_API_KEY) 
 
     logger.info(f"Sucessfully setup a LLM: {llm}")
