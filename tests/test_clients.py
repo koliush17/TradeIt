@@ -42,7 +42,7 @@ class TestYahooFinanceClient:
             with pytest.raises(InvalidCryptoNameError):
                 client.fetch("INVALID", "1d", "1m")
          
-@pytest.mark.asyncio
+@pytest.mark.asyncio()
 class TestAlphaVantageClient:
     async def test_alphavantage_results(self):
         mock_response = MagicMock()
@@ -54,15 +54,10 @@ class TestAlphaVantageClient:
 
 
         with patch("app.clients.alphavantage_client.httpx.AsyncClient") as mock_async_client:
-            mock_async_client.return_value.__aenter__.return_values = mock_client
+            mock_async_client.return_value.__aenter__.return_value = mock_client
+            mock_async_client.return_value.__aexit__.return_value = None
 
             client = AlphaVantageClient()
             result = await client.fetch({"symbol": "BTC"})
-
             assert result == {"price": "123.55"}
-
-
-        
-
-
 
