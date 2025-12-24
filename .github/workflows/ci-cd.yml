@@ -36,7 +36,7 @@ jobs:
           POSTGRES_PASSWORD: "fakeKey"
           POSTGRES_DB: "fakeKey"
           POSTGRES_HOST: "fakeKey"
-          POSTGRES_PORT: "fakeKey"
+          POSTGRES_PORT: 1111
           API_BASE_URL: "fakeKey"
           LANGFUSE_SECRET_KEY: "fakeKey"
           LANGFUSE_PUBLIC_KEY: "fakeKey"
