@@ -7,9 +7,6 @@ RUN groupadd --system --gid 999 nonroot \
 
 WORKDIR /app
 
-# Use bytocode compilation for faster program startup. Works for large environments
-#ENV UV_COMPILE_BYTECODE=1
-
 ENV UV_PROJECT_ENV=/app/.venv
 
 # Use system Python instead of downloading a new one
@@ -37,7 +34,7 @@ ENV PATH="/app/.venv/bin:$PATH"
 
 USER nonroot
 
-EXPOSE 8000
+EXPOSE 8080
 
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
 
