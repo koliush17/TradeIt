@@ -5,9 +5,8 @@ def get_connection_string():
         PASSWORD = settings.POSTGRES_PASSWORD
         DB = settings.POSTGRES_DB
         HOST = settings.POSTGRES_HOST
-        PORT = settings.POSTGRES_PORT
 
-        return f"postgresql://{USER}:{PASSWORD}@{HOST}:{PORT}/{DB}"
+        return f"postgresql://{USER}:{PASSWORD}@/{DB}?host=/cloudsql/{HOST}"
 
 CONN_STRING = get_connection_string()
  
