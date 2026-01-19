@@ -14,8 +14,6 @@ This application provides endpoints for market data and leverages Google's Gemin
 
 ## 📂 Project Structure
 
-# correct this structure
-
 ```
   trading-bot/
   ├── agent/                 # AI Agent logic
